@@ -36,7 +36,7 @@ export class NetworkService {
 
 	createSession(sessionId: string, openviduServerUrl: string, openviduSecret: string): Promise<string> {
 		return new Promise((resolve, reject) => {
-			const body = JSON.stringify({ customSessionId: sessionId });
+			const body = JSON.stringify({ customSessionId: sessionId ,recordingMode: "ALWAYS" });
 			const options = {
 				headers: new HttpHeaders({
 					Authorization: 'Basic ' + btoa('OPENVIDUAPP:' + openviduSecret),

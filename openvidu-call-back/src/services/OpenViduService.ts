@@ -11,7 +11,7 @@ export class OpenViduService {
 	public async createSession(sessionId: string, openviduUrl: string, openviduSecret: string ): Promise<any> {
         const url = openviduUrl + '/openvidu/api/sessions';
         console.log("Requesting session to ", url);
-        const body: string = JSON.stringify({ customSessionId: sessionId});
+        const body: string = JSON.stringify({ customSessionId: sessionId, recordingMode: "ALWAYS"});
 
         return await this.httpClientService.post(body, url, openviduSecret);
 	}

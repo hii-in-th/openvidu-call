@@ -115,7 +115,7 @@ function createSession(sessionName) { // See https://docs.openvidu.io/en/stable/
         $.ajax({
             type: 'POST',
             url: OPENVIDU_SERVER_URL + '/api/sessions',
-            data: JSON.stringify({ customSessionId: sessionName }),
+            data: JSON.stringify({ customSessionId: sessionName , recordingMode: "ALWAYS"}),
             headers: {
                 Authorization: 'Basic ' + btoa('OPENVIDUAPP:' + OPENVIDU_SERVER_SECRET),
                 'Content-Type': 'application/json',
